@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 3 - Part 2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CNIT 133 - Homework 3, Part 1</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../favicon.png" type="image/gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+</head>
+
+<body class="montserrat-400">
+    <header>
+        <h1><a href="../../">CNIT 133 - Homework</a></h1>
+        <hr>
+    </header>
+    <section>
+        <h2>Homework 3 - Functions, Part 2</h2>
+        <a href="./index.html">Homework 3 - Main Page</a><br><br>
+    </section>
+    <section>
+        <h3>Seller Weekly Earnings Calculator</h3>
+        <form id="seller-earning-form">
+            <label for="seller-name">Seller's Name:&nbsp;</label>
+            <input type="text" id="seller-name" name="seller-name" required
+                title="Please make sure that the salesperson's name is spelled correctly"><br><br>
+
+            <p>For each item type the quanity sold by the seller</p>
+
+            <label for="item-1">Item 1:&nbsp;</label>
+            <input type="number" id="item-1" name="item-1" required><br><br>
+            <label for="item-2">Item 2:&nbsp;</label>
+            <input type="number" id="item-2" name="item-2" required><br><br>
+            <label for="item-3">Item 3:&nbsp;</label>
+            <input type="number" id="item-3" name="item-3" required><br><br>
+            <label for="item-4">Item 4:&nbsp;</label>
+            <input type="number" id="item-4" name="item-4" required><br><br>
+
+            <input type="submit" value="Submit"><br><br>
+            <input id="btn-reset-form" type="reset" value="Reset Form">
+
+            <table>
+                <tr>
+                    <th>Item #</th>
+                    <th>Price</th>
+                    <th>Qty Sold</th>
+                    <th>Total $</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>$20.99</td>
+                    <td><input id="item-1-qty-sold" type="text" value="" readonly></td>
+                    <td><input id="item-1-total" type="text" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>$12.75</td>
+                    <td><input id="item-2-qty-sold" type="text" value="" readonly></td>
+                    <td><input id="item-2-total" type="text" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>$9.95</td>
+                    <td><input id="item-3-qty-sold" type="text" value="" readonly></td>
+                    <td><input id="item-3-total" type="text" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>$35.89</td>
+                    <td><input id="item-4-qty-sold" type="text" value="" readonly></td>
+                    <td><input id="item-4-total" type="text" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total Amount Sold</td>
+                    <td><input class="right" id="total-amount-sold" type="text" value="" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total Weekly Earnings</td>
+                    <td><input class="right" id="total-weekly-earnings" type="text" value="" readonly></td>
+                </tr>
+
+            </table>
+        </form>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="./js/part2.js"></script>
+</body>
+
+
+</html>

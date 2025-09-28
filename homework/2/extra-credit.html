@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 2 - Extra Credit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CNIT 133 - Homework 2, Extra Credit</title>
+    <link rel="stylesheet" href="./style/part1.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./style/extra-credit.css">
+    <link rel="icon" href="../../favicon.png" type="image/gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="montserrat-400">
+
+    <header>
+        <h1><a href="../../">CNIT 133 - Homework</a></h1>
+        <hr>
+    </header>
+    <section>
+        <h2>Homework 2 - Basic Operations, Extra Credit</h2>
+
+        <a href="./index.html">Homework 2 - Main Page</a>
+        <br><br>
+
+        <p id="toggle-instructions">Click to Show/Hide Instructions</p>
+        <p id="instructions">
+            The foreign exchange rates in September 2025.<br>
+            Enter a dollar amount in the table below to see the corresponding foreign exchange values.
+        </p>
+        <table>
+            <tbody>
+                <tr>
+                    <th colspan="3">Monetary Exchange Rates</th>
+                </tr>
+                <tr>
+                    <th>Currency</th>
+                    <th>Rate</th>
+                    <th>Value</th>
+                </tr>
+                <tr class="border">
+                    <td>Euro</td>
+                    <td>0.85</td>
+                    <td class="rate" id="euro"></td>
+                </tr>
+                <tr class="border">
+                    <td>Canadian Dollar</td>
+                    <td>1.38</td>
+                    <td class="rate" id="cad"></td>
+                </tr>
+                <tr class="border">
+                    <td>Hong Kong Dollar</td>
+                    <td>7.80</td>
+                    <td class="rate" id="hkd"></td>
+                </tr>
+                <tr class="border">
+                    <td>Japanese Yen</td>
+                    <td>147.07</td>
+                    <td class="rate" id="jpy"></td>
+                </tr>
+                <tr class="border">
+                    <td>Mexican Peso</td>
+                    <td>18.72</td>
+                    <td class="rate" id="mxn"></td>
+                </tr>
+                <tr class="border">
+                    <td colspan="2"><strong>Enter Amount of U.S. Dollars</strong></td>
+                    <td><input type="numeric"></td>
+                </tr>
+                <tr>
+                    <td id="error" colspan="3">Error! Numbers only :/</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/extraCredit.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,10 @@
+.red { color: red; }
+.blue { color: blue }
+.green { color: green; }
+
+.bold { font-weight: bold; }
+.italic { font-style: italic;}
+
+.times-new-roman { font-family: 'Times New Roman', Times, serif; }
+.arial { font-family: Arial, Helvetica, sans-serif}
+.impact { font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }

@@ -1,0 +1,27 @@
+
+#toggle-instructions {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#instructions {
+    font-style: italic;
+}
+
+.border > td{
+    border: 1px dotted gray;
+}
+
+input {
+    width: 60px;
+}
+
+.rate {
+    text-align: right;;
+}
+#error {
+    display: none;
+    color: red;
+    font-style: italic;
+    text-align: right;
+}

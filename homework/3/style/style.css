@@ -1,0 +1,14 @@
+table {
+    border: 1px double #ff9a3c;;
+    margin-top: 1em;
+}
+
+.right {
+    text-align: right;
+}
+
+label.error {
+    color: red;
+    font-style: italic;
+    margin-left: 8px;
+}

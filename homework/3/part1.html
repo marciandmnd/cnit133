@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 3 - Part 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CNIT 133 - Homework 3, Part 1</title>
+    <link rel="stylesheet" href="./style/part1.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="../../favicon.png" type="image/gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="montserrat-400">
+
+    <header>
+        <h1><a href="../../">CNIT 133 - Homework</a></h1>
+        <hr>
+    </header>
+    <section>
+        <h2>Homework 3 - Functions, Part 1</h2>
+        <a href="./index.html">Homework 3 - Main Page</a><br><br>
+
+    </section>
+    <section>
+        <h3>Student Grades</h3>
+        <form id="student-grades-form">
+            <label for="hw-average">Homework Average</label><br>
+            <input type="number" id="hw-average" name="hw-average"><br><br>
+            <label for="mid-term-score">Mid-Term Exam Score</label><br>
+            <input type="number" id="mid-term-score" name="mid-term-score"><br><br>
+            <label for="final-score">Final Exam Score</label><br>
+            <input type="number" id="final-score" name="final-score"><br><br>
+            <label for="participation">Participation</label><br>
+            <input type="number" id="participation" name="participation"><br><br>
+            <input type="submit" value="Submit">
+            <input id="btn-reset-form" type="reset" value="Reset Form">
+        </form>
+        <div id="results">
+            <p>
+
+            </p>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="./js/part1.js"></script>
+</body>
+
+
+</html>

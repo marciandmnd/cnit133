@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 2 - Part 2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CNIT 133 - Homework 2, Part 2</title>
+    <link rel="stylesheet" href="./style/part1.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../favicon.png" type="image/gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="montserrat-400">
+
+    <header>
+        <h1><a href="../../">CNIT 133 - Homework</a></h1>
+        <hr>
+    </header>
+    <section>
+        <h2>Homework 2 - Basic Operations, Part 2</h2>
+        <a href="./index.html">Homework 2: Main Page</a><br><br>
+        <form id='form' action="#">
+            <label for="numberOne">Number 1:</label><br>
+            <input type="number" step="any" id="numberOne" required><br><br>
+
+            <label for="numberTwo">Number 2:</label><br>
+            <input type="number" step="any" id="numberTwo" required><br><br>
+
+            <label for="numberThree">Number 3:</label><br>
+            <input type="number" step="any" id="numberThree" required><br><br>
+
+            <button id="btn-process" type="button" onclick="process()">Process</button>
+            <input id="btn-reset" type="reset" value="Reset Form">
+            <button id="fade-results" type="button">Fade Results</button>
+            <br><br>
+
+            <div id="results">
+                <label for="resultsOutput">Results:</label><br>
+                <textarea id="resultsOutput" rows="5" cols="40" placeholder="Results..."></textarea>
+            </div>
+        </form>
+    </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/part2.js"></script>
+</body>
+
+
+</html>

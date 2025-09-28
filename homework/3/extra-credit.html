@@ -16,6 +16,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
+    <style>
+        #results {
+            font-style: italic;
+            font-weight: bold;
+        }
+        .green { color: green; }
+        .red { color: red; }
+    </style>
 
 </head>
 
@@ -38,14 +46,18 @@
             <label for="answer">
                 Your Answer:
             </label>
-            <input name="answer" id="answer" type="number" max="81" min="0" maxlength="3" placeholder="e.g., 123" required>
-            <input type="submit" value="Submit">
+            <input name="answer" id="answer" type="number" max="81" min="0" placeholder="e.g., 123" required>
+            <input id="submit" type="submit" value="Submit">
         </form>
         <p id="results">
         </p>
+        <div id="continue-playing" style="display: none;">
+            <p>Continue playing?</p>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
+        </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> -->
     <script src="./js/extraCredit.js"></script>
 </body>
 

@@ -1,0 +1,11 @@
+#draggable {
+    border: 8px double #ff6f3c;
+    display: inline-block;
+}
+
+legend {
+        color:#ff6f3c;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 1.33em;
+}

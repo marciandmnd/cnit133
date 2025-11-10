@@ -1,11 +1,35 @@
-body {
-    background-color: #ffc93c;
+/* 5 color paletter from Mecca shirt */
+.first-color {
+    background: #3399ff;
+}
 
+.second-color {
+    background: #ff3399;
+}
+
+.third-color {
+    background: #ff9a3c;
+}
+
+.fourth-color {
+    background: black;
+}
+
+.fifth-color {
+    background: #ffffcc;
+}
+
+body {
+    background-color: #ffffcc;
 }
 
 header {
-    color: #155263;
+    color: #3399ff;
     text-align: center;
+}
+
+header a:visited {
+    color: #3399ff;
 }
 
 header h1 a {
@@ -17,24 +41,43 @@ section {
 }
 
 section h2 {
-    color: #155263;
+    color: #ff3399;
+    
 }
 
-
-.first-color {
-    background: #155263;
+.error {
+    color: #ff5050;
 }
 
-.second-color {
-    background: #ff6f3c;
+.success {
+    color: #33cc33;
 }
 
-.third-color {
+.select {
+    background: black;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    color: #ffffcc;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: #3399ff;
+    border-color: #3399ff;
+    color: #ffffcc;
+}
+
+.btn-warning {
     background: #ff9a3c;
-}
-
-.fourth-color {
-    background: #ffc93c;
+    border-color: #ff9a3c;
+    color: black;
 }
 
 .montserrat-400 {
@@ -44,5 +87,11 @@ section h2 {
   font-style: normal;
 }
 
+.inline-block {
+    display: inline-block;
+}
 
-/* reset css
+.section {
+    border:1px solid #ff5050;
+    display: inline-block;
+}

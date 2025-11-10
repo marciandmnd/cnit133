@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 5 - Part 2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CNIT 133 - Homework 5, Part 2</title>
+    <link rel="stylesheet" href="./style/part2.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../favicon.png" type="image/gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+</head>
+
+<body class="montserrat-400">
+    <header>
+        <h1><a href="../../">CNIT 133 - Homework</a></h1>
+        <hr>
+    </header>
+    <section>
+        <h2>Homework 5 - Arrays, Part 2</h2>
+        <a href="./index.html">Homework 4 - Main Page</a><br><br>
+    </section>
+    <section class="section">
+        <h2>JavaScript Navigation</h2>
+        <hr>
+        <br><br>
+        <fieldset>
+            <legend>Navigate via onchange handler:</legend>
+            <select class="select" id="pageSelect0" onchange="navigateToURL('pageSelect0')">
+                <option value="">-- Please choose an option --</option>
+                <option value="https://quran.com">Quran.com</option>
+                <option value="https://www.iamawesome.com">iamawesome.com</option>
+                <option value="https://pomofocus.io/">Pomofocus</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+
+            <legend>Navigate via onclick handler:</legend>
+            <select class="select" id="pageSelect1">
+                <option value="">Select a page...</option>
+                <option value="https://quran.com">Quran.com</option>
+                <option value="https://www.iamawesome.com">iamawesome.com</option>
+                <option value="https://pomofocus.io/">Pomofocus</option>
+            </select>
+            <button class="btn btn-primary" onclick="navigateToURL('pageSelect1');">Go</button>
+        </fieldset>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/part2.js"></script>
+</body>
+
+
+</html>

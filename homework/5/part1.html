@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework 5 - Part 1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CNIT 133 - Homework 5, Part 1</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./style/part1.css">
+    <link rel="icon" href="../../favicon.png" type="image/gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="montserrat-400">
+
+    <header>
+        <h1><a href="../../">CNIT 133 - Homework</a></h1>
+        <hr>
+    </header>
+    <section>
+        <h2>Homework 5 - Arrays, Part 1</h2>
+        <a href="./index.html">Homework 5 - Main Page</a><br><br>
+
+    </section>
+    <section class="section">
+        <h2>Your Tastes, Our Insights</h2>
+        <hr>
+        <br><br>
+        <form id="survey">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text">
+            <br><br>
+
+            <fieldset>
+                <legend>Select age group:</legend>
+                <input type="radio" id="less-than-21" name="age-group" value="less-than-21">
+                <label for="less-than-21">less than 21</label><br>
+                <input type="radio" id="between-21-and-50" name="age-group" value="between-21-and-50">
+                <label for="between-21-and-50">between 21 and 50</label><br>
+                <input type="radio" id="older-than-50" name="age-group" value="older-than-50">
+                <label for="older-than-50">older than 50</label>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Which browsers have you used?</legend>
+                <div>
+                    <input type="checkbox" id="firefox" name="browsers" value="firefox">
+                    <label for="firefox">Firefox</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="edge" name="browsers" value="edge">
+                    <label for="edge">Edge</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="chrome" name="browsers" value="chrome">
+                    <label for="chrome">Chrome</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="safari" name="browsers" value="safari">
+                    <label for="safari">Safari</label>
+                </div>
+            </fieldset>
+            <br>
+            <label for="movie-genre">Choose your preferred movie genre:</label>
+            <select class="select" name="movie-genre" id="movie-genre">
+                <option value="" disabled selected>Select a genre</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="documentary">Documentary</option>
+                <option value="science-fiction">Science Fiction</option>
+            </select>
+            <br><br>
+            <div style="text-align: right;">
+                <input id="btnReset" type="reset" value="Reset Form" class="btn btn-warning">
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+        </form>
+        <div id="results"></div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/part1.js"></script>
+</body>
+
+
+</html>

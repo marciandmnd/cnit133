@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Homework 4 - Part 2">
+    <meta name="description" content="Homework 5 - Part 3">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CNIT 133 - Homework 4, Part 2</title>
-    <link rel="stylesheet" href="./style/part2.css">
+    <title>CNIT 133 - Homework 5, Part 3</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" href="../../favicon.png" type="image/gif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +24,27 @@
         <hr>
     </header>
     <section>
-        <h2>Homework 4 - Looping Statements, Part 2</h2>
-        <a href="./index.html">Homework 4 - Main Page</a><br><br>
+        <h2>Homework 5 - Arrays, Part 3</h2>
+        <a href="./index.html">Homework 5 - Main Page</a><br><br>
     </section>
-    <section>
-        <h3>Learn About Compound Interest</h3>
-        <p>Calculation of compound interest on a principal of <span id="principalSpan"></span>:</p>
-        <hr>
-        <div id="interestTables"></div>
+    <section class="section">
+        <h2>State Census Data Lookup</h2>
+        <form id="stateForm">
+            <label for="stateInput">Enter State Name or Abbreviation:</label><br>
+            <input type="text" id="stateInput" name="state" placeholder="e.g., California or CA" required>
+            <br><br>
+            <button class="btn btn-primary" type="submit">Get State Info</button>
+            <button class="btn btn-warning" type="reset" id="clear">Clear Form</button><br><br>
+
+            <div id="outputResult">
+                <p id="results"></p>
+            </div>
+        </form>
 
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
-    <script src="./js/part2.js"></script>
+    <script src="./js/part3.js"></script>
+
 </body>
 
 

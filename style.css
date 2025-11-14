@@ -92,7 +92,15 @@ section h2 {
 }
 
 .section {
-    border:1px solid #ff5050;
+    border:1px solid black;
     display: inline-block;
     margin-left: 1em;
+}
+
+.ml-1 {
+    margin-left: 0.2em;
+}
+
+.bold {
+    font-weight: bold;
 }

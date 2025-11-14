@@ -14,7 +14,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body class="montserrat-400">
@@ -27,13 +26,24 @@
         <a href="./index.html">Homework 6 - Main Page</a><br><br>
     </section>
     <section class="section">
-        
+        <h2>Phone Number Format Validator</h2>
+        <form id="phoneNumberForm">
+            <label for="phone">
+                Enter your phone number:<br>
+                <small>Format: (415) 321-1234</small>
+            </label><br>
 
+            <input type="tel" id="phone" name="phone" required>
+            <br><br>
+            <button class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-warning ml-1" id="clear">Clear</button><br><br>
+        </form>
+
+        <div id="results">
+        </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/part3.js"></script>
-
 </body>
-
 
 </html>

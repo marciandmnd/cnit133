@@ -4,48 +4,44 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Homework 6 - Part 1">
+    <meta name="description" content="Homework 6 - Part 2">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CNIT 133 - Homework 6, Part 1</title>
+    <title>CNIT 133 - Homework 6, Part 2</title>
+    <link rel="stylesheet" href="./style/part2.css">
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="./style/part1.css">
     <link rel="icon" href="../../favicon.png" type="image/gif">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body class="montserrat-400">
-
     <header>
         <h1><a href="../../">CNIT 133 - Homework</a></h1>
         <hr>
     </header>
     <section>
-        <h2>Homework 6 - Objects, Part 1</h2>
+        <h2>Homework 6 - Arrays, Part 2</h2>
         <a href="./index.html">Homework 6 - Main Page</a><br><br>
     </section>
     <section class="section">
-        <h2>At Least 4 Decimals</h2>
+        <h2>Character Search</h2>
+        <form id="characterCountForm">
+            <label for="longContent">Enter your long content here:</label><br>
+            <textarea id="longContent" rows="10" cols="50" required></textarea><br><br>
 
-        <form>
-            <label for="decimalNumber">Enter a number with at least 4 decimal places:</label>
-            <input type="number" id="decimalNumber" placeholder="3.1214" step="any" required>
-            <br><br>
-            <button class="btn btn-primary" type="submit">Submit Data</button>
-            <button id="clear" class="btn btn-warning" type="reset">Clear</button>
+            <label for="searchChar">Enter a single character to search:&nbsp;</label>
+            <input class="single-char" type="text" id="searchChar" maxlength="1" required><br><br>
+
+            <button class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-warning ml-1" id="clear">Clear</button><br><br>
+            <p id="result" class="success"></p>
         </form>
-
-        <div id="output">
-        </div>
-
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="./js/part1.js"></script>
+    <script src="./js/part2.js"></script>
 </body>
-
 
 </html>

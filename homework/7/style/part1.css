@@ -1,0 +1,11 @@
+#displayArea {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #ffffcc;
+    background-color: red;
+}
+
+form {
+    display: inline-block;
+}

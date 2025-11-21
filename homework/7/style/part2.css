@@ -1,0 +1,7 @@
+
+ input.single-char {
+  width: 2em; /* Adjust this value based on your font-size and desired character width */
+  text-align: center; /* Optional: center the character within the field */
+  padding: 0.2em; /* Optional: adjust padding for better visual spacing */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}

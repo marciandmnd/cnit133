@@ -1,7 +1,47 @@
+/* Navigation Menu Styling */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
- input.single-char {
-  width: 2em; /* Adjust this value based on your font-size and desired character width */
-  text-align: center; /* Optional: center the character within the field */
-  padding: 0.2em; /* Optional: adjust padding for better visual spacing */
-  box-sizing: border-box; /* Ensures padding and border are included in the width */
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+}
+
+.navbar {
+  background-color: #333;
+  display: flex;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a:hover {
+  background-color: #575757;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: black;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd;
 }

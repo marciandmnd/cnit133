@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Homework 6 - Part 2">
+    <meta name="description" content="Homework 7 - Part 2">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CNIT 133 - Homework 6, Part 2</title>
+    <title>CNIT 133 - Homework 7, Part 2</title>
     <link rel="stylesheet" href="./style/part2.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="icon" href="../../favicon.png" type="image/gif">
@@ -23,22 +23,39 @@
         <hr>
     </header>
     <section>
-        <h2>Homework 6 - Arrays, Part 2</h2>
-        <a href="./index.html">Homework 6 - Main Page</a><br><br>
+        <h2>Homework 7 - Object Model and Miscellaneous jQuery, Part 2</h2>
+        <a href="./index.html">Homework 7 - Main Page</a><br><br>
     </section>
     <section class="section">
-        <h2>Character Search</h2>
-        <form id="characterCountForm">
-            <label for="longContent">Enter your long content here:</label><br>
-            <textarea id="longContent" rows="10" cols="50" required></textarea><br><br>
-
-            <label for="searchChar">Enter a single character to search:&nbsp;</label>
-            <input class="single-char" type="text" id="searchChar" maxlength="1" required><br><br>
-
-            <button class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-warning ml-1" id="clear">Clear</button><br><br>
-            <p id="result" class="success"></p>
-        </form>
+        <h2>DropdownNavigation Menu</h2>
+        <nav class="navbar" id="navbarNav">
+            <ul class="navbar">
+                <li class="nav-item">
+                    <a href="#">Homework 2</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../2/part1.html" target="_blank">Part 1</a></li>
+                        <li><a href="../2/part2.html" target="_blank">Part 2</a></li>
+                        <li><a href="../2/extra-credit.html" target="_blank">Extra Credit</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"">
+                <a href=" #">Homework 3</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../3/part1.html" target="_blank">Part 1</a></li>
+                        <li><a href="../3/part2.html" target="_blank">Part 2</a></li>
+                        <li><a href="../3/extra-credit.html" target="_blank">Extra Credit</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"">
+                <a href=" #">Homework 4</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../4/part1.html" target="_blank">Part 1</a></li>
+                        <li><a href="../4/part2.html" target="_blank">Part 2</a></li>
+                        <li><a href="../4/extra-credit.html" target="_blank">Extra Credit</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/part2.js"></script>

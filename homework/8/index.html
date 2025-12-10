@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CCSF CNIT 133 Homework 7">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CNIT 133 - Homework 7</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" href="../../favicon.png" type="image/gif">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet">
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 5px;
+    }
+  </style>
+</head>
+
+
+<body class="montserrat-400">
+  <header>
+    <h1><a href="../../">CNIT 133 - Homework</a></h1>
+    <hr>
+  </header>
+  <section>
+    <h1>Homework 8 - AJAX Application</h1>
+    <a href="../../">Home</a>
+  </section>
+  <section class="section mb-2">
+    <h2>CD Catalog AJAX Example</h2>
+    <button class="btn btn-primary" type="button" onclick="loadDoc()">Get CD collection</button>
+    <br><br>
+    <table id="demo"></table>
+  </section>
+
+  <script>
+    function loadDoc() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        myFunction(this);
+      }
+      xhttp.open("GET", "cd_catalog.xml");
+      xhttp.send();
+    }
+    function myFunction(xml) {
+      const xmlDoc = xml.responseXML;
+      const x = xmlDoc.getElementsByTagName("CD");
+      let table = "<tr><th>Artist</th><th>Title</th></tr>";
+      for (let i = 0; i < x.length; i++) {
+        table += "<tr><td>" +
+          x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+          "</td></tr>";
+      }
+      document.getElementById("demo").innerHTML = table;
+    }
+  </script>
+  <section class="section mb-2">
+    <h2>Explanation of Ajax</h2>
+    <p>Ajax (Asynchronous JavaScript and XML) is a technique for creating web pages. It allows web pages to be updated
+      asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is
+      possible to update parts of a page, without reloading the whole page. Ajax is widely used in applications to
+      improve user experience by making pages more responsive and interactive.</p>
+
+    <p>In this html file, when the 'Get CD collection' button is clicked, an AJAX request is made to fetch an XML file
+      containing a CD catalog, and the data is then displayed in a table without reloading the page. XMLHttpRequest
+      (XHR) is a JavaScript object fundamental to implementing Asynchronous JavaScript and XML (AJAX) functionality in
+      web applications. It allows web pages to send and receive data from a web server asynchronously. In JavaScript,
+      "asynchronously" refers to a programming paradigm where certain tasks can be initiated and allowed to run in the
+      background, without blocking the execution of the main program thread. This contrasts with synchronous execution,
+      where each task must complete before the next one can begin. In the script of this page, an XMLHttpRequest object
+      is created, configured to perform a GET request to the XML file, and sent. When the response is received, the XML
+      data is parsed and used to dynamically generate the HTML table displaying the CD catalog.</p>
+  </section>
+
+  <section class="section mb-2">
+    <h2>REST API</h2>
+
+    <h3>Report for Developers: Why Use the Google Maps API</h3>
+    <ul>
+      <li>Comprehensive Location Data and Functionality:
+        The Google Maps Platform offers a vast array of APIs covering various location-based needs, including:
+        <ul>
+          <li>Maps: Customizable maps, Street View imagery, 2D and 3D views, markers, and custom data for web and mobile
+            applications.</li>
+          <li>Routes: Accurate directions, real-time traffic information, route optimization, and distance calculations
+            for various modes of transport.</li>
+          <li>Places: Rich metadata for millions of places, enabling discovery, search by address or phone number, and
+            access to details like reviews and photos.</li>
+          <li>Geocoding: Converting addresses to geographic coordinates and vice-versa.</li>
+        </ul>
+      </li>
+      <li>Reliability and Scale:
+        Google Maps is a widely used and trusted platform, providing a robust and scalable infrastructure for
+        location-based services. This ensures high availability and performance for applications that rely on these
+        APIs.</li>
+      <li>Integration with Google Ecosystem:
+        The APIs seamlessly integrate with other Google products and services, offering a cohesive experience and
+        potentially enhancing functionalities within applications.</li>
+      <li>User Experience and Familiarity:
+        Users are generally familiar with the Google Maps interface and features, leading to a more intuitive and
+        user-friendly experience when encountering applications built with the Google Maps Platform.</li>
+      <li>Active Development and Support:
+        Google actively maintains and updates the Maps Platform, providing ongoing improvements, new features, and
+        comprehensive documentation and support for developers.</li>
+      <li>Search Engine Optimization (SEO) Benefits:
+        Incorporating Google Maps can improve local SEO for businesses, making it easier for customers to find physical
+        locations and enhancing visibility in search results, especially with Google's mobile-first indexing.</li>
+    </ul>
+    <p>
+      Google Maps Platform APIs generally return responses in either JSON (JavaScript Object Notation) or XML
+      (Extensible Markup Language) format.
+      The specific format can usually be specified in your API request, often through a parameter in the URL. For
+      example, in many APIs like the Geocoding API, you might specify output=json or output=xml to indicate your
+      preferred response format. JSON is often the recommended and more commonly used format for web services due to its
+      lightweight nature and ease of parsing in modern web applications</p>
+    <p>
+      Yes, an API key is generally required to access and use the Google Maps Platform APIs, including the Maps
+      JavaScript API.
+      While older versions (like V3 upon its initial release) did not strictly require an API key for basic
+      functionality, current best practices and the official Google Maps Platform documentation strongly recommend and
+      often mandate the use of API keys.
+      Reasons for requiring an API key:
+
+      Authentication and Authorization:
+      The API key authenticates your requests and links them to your Google Cloud project and billing account.
+      Usage Tracking and Monitoring:
+      It enables Google to track your API usage, which is essential for billing purposes and for you to monitor your
+      application's consumption.
+      Security:
+      API keys allow you to restrict access to specific APIs and applications, preventing unauthorized use and potential
+      abuse.
+      Access to Advanced Features:
+      Many advanced features and services within the Google Maps Platform require an API key.
+
+      Exceptions:
+
+      Basic iframe embeds:
+      If you are simply embedding a static Google Map using an iframe tag, you typically do not need an API key for
+      basic display.
+      Google My Maps:
+      Creating and sharing maps through Google My Maps does not require an API key.
+
+      In summary: For most development scenarios involving the Google Maps Platform APIs, an API key is a necessary
+      component for proper functionality, security, and usage management.</p>
+    <p>
+      Yes, companies generally pay fees for using the Google Maps Platform APIs beyond a generous free tier
+      , with costs depending on the specific APIs used (Maps, Places, Routes) and the volume of requests, following a
+      pay-as-you-go model with potential discounts for higher usage. Google offers a monthly free credit (around $200)
+      that covers initial usage for many smaller applications, but high-traffic apps will incur charges.
+      How it Works:
+
+      Google Maps Platform: You use the Google Cloud Console to enable APIs (like Maps, Places, Routes) and manage
+      billing.
+      Free Tier: You get a monthly free credit, often enough for smaller sites to avoid charges, covering thousands of
+      map loads or location requests.
+      Pay-As-You-Go: Once you exceed the free amount, you pay per API call (or "request"), with different APIs (e.g.,
+      Dynamic Maps, Geocoding, Routes) having different rates.
+      Usage-Based Pricing: Costs scale with usage, moving to different price tiers as your monthly request volume
+      increases, making it suitable for both small and large businesses.
+
+      Key Takeaway:
+      Most companies will encounter fees if their applications generate significant traffic, but the free tier allows
+      for testing and low-volume use without cost.
+      ***
+
+      Google Maps API fees are charged based on a pay-as-you-go model, where usage is tracked and billed monthly through
+      Google Cloud Platform's Cloud Billing. The core of this billing system revolves around Stock Keeping Units (SKUs)
+      and billable events.
+      Here's a breakdown of how it works:
+
+      SKU-Based Pricing:
+      Google Maps Platform services are categorized into various SKUs, each representing a specific API or feature
+      (e.g., Dynamic Maps, Dynamic Street View, Geocoding, Places API features like Autocomplete or Place Details). Each
+      SKU has its own pricing structure.
+      Billable Events:
+      For each SKU, there are specific "billable events" that trigger charges. These events can vary significantly:
+      Map Loads: For Dynamic Maps, a charge is incurred for each successful map load.
+      Panorama Loads: For Dynamic Street View, each successful panorama load is a billable event.
+      Requests: Many APIs, like Geocoding or Directions, are billed per request made to their respective endpoints.
+      Data Returned: For some APIs, especially those with configurable data fields (like Places API), the specific data
+      requested and returned can influence the cost.
+      Pricing Tiers and Discounts:
+      While the base pricing is per 1,000 billable events (e.g., $7 per 1,000 map loads), Google Maps Platform often
+      offers volume-based discounts for higher usage tiers.
+      Monthly Credit:
+      Historically, Google has offered a recurring monthly credit (e.g., $200) that can be applied to qualifying Google
+      Maps Platform SKUs, effectively providing a free tier of usage for many applications.
+      Billing and Management:
+      Billing is managed through the Google Cloud Console, where you can monitor your usage, set up budgets and alerts,
+      and enable or disable billing for your projects. An API key is required for authentication and billing purposes.
+
+      In essence, you pay for what you use, with the cost determined by the specific Google Maps API features you
+      implement and the volume of billable events generated by your application.
+
+    </p>
+    <p>https://developers.google.com/maps/documentation</p>
+  </section>
+  <section class="section">
+    <h2>Extra Credit</h2>
+    <div id="map" style="height:400px;width:100%"></div>
+  </section>
+
+</body>
+<script>
+        function initMap() {
+            // Define the coordinates for the map's center (e.g., London)
+            const london = { lat: 51.508742, lng: -0.120850 };
+
+            // Create a new map instance
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12, // Set the initial zoom level
+                center: london, // Set the map's center
+            });
+
+            // Optionally, add a marker at the center
+            new google.maps.Marker({
+                position: london,
+                map: map,
+                title: "London",
+            });
+        }
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsxOsWWart-vlkgwLZCirQqjQEr9hBhjE&callback=initMap" defer></script>
+</html>

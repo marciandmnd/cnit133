@@ -112,3 +112,15 @@ section h2 {
 .bold {
     font-weight: bold;
 }
+
+.width-100 {
+    width: 100%;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.tabbed-paragraph {
+  text-indent: 2em; 
+}

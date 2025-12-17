@@ -23,7 +23,7 @@
     <hr>
   </header>
   <section>
-    <h1>Homework 8 - AJAX Application</h1>
+    <h2>Homework 8 - AJAX Application</h2>
     <a href="../../">Home</a>
   </section>
   <section class="section mb-2">
@@ -79,7 +79,7 @@
   <section class="section mb-2">
     <h2>REST API</h2>
 
-    <h3>Report for Developers: Why Use the Google Maps API</h3>
+    <h3>Report for Developers: Why Use the Google Maps API?</h3>
     <ul>
       <li><span class="italic">Comprehensive Location Data and Functionality:</span>
         The Google Maps Platform offers a vast array of APIs covering various location-based needs, including:
@@ -116,91 +116,107 @@
     <h3>Response Formats</h3>
     <p class="tabbed-paragraph">
       Google Maps Platform APIs generally return responses in either JSON (JavaScript Object Notation) or XML
-      (Extensible Markup Language) format.
-      The specific format can usually be specified in your API request, often through a parameter in the URL. For
+      (Extensible Markup Language) format. The specific format can usually be specified in your API request, often
+      through a parameter in the URL. For
       example, in many APIs like the Geocoding API, you might specify output=json or output=xml to indicate your
       preferred response format. JSON is often the recommended and more commonly used format for web services due to its
-      lightweight nature and ease of parsing in modern web applications</p>
+      lightweight nature and ease of parsing in modern web applications.</p>
     <h3>API Key Requirement</h3>
     <p class="tabbed-paragraph">
-      Yes, an API key is generally required to access and use the Google Maps Platform APIs, including the Maps
-      JavaScript API.
-      While older versions (like V3 upon its initial release) did not strictly require an API key for basic
+      An API key is generally required to access and use the Google Maps Platform APIs, including the Maps JavaScript
+      API. While older versions (like V3 upon its initial release) did not strictly require an API key for basic
       functionality, current best practices and the official Google Maps Platform documentation strongly recommend and
-      often mandate the use of API keys.
-      Reasons for requiring an API key:
-
-      Authentication and Authorization:
-      The API key authenticates your requests and links them to your Google Cloud project and billing account.
-      Usage Tracking and Monitoring:
-      It enables Google to track your API usage, which is essential for billing purposes and for you to monitor your
-      application's consumption.
-      Security:
-      API keys allow you to restrict access to specific APIs and applications, preventing unauthorized use and potential
-      abuse.
-      Access to Advanced Features:
-      Many advanced features and services within the Google Maps Platform require an API key.
-
-      Exceptions:
-
-      Basic iframe embeds:
-      If you are simply embedding a static Google Map using an iframe tag, you typically do not need an API key for
-      basic display.
-      Google My Maps:
-      Creating and sharing maps through Google My Maps does not require an API key.
-
-      In summary: For most development scenarios involving the Google Maps Platform APIs, an API key is a necessary
-      component for proper functionality, security, and usage management.</p>
+      often mandate the use of API keys.<br><br>
+      <span class="bold italic">Reasons for requiring an API key:</span>
+    <ul>
+      <li><span class="italic">Authentication and Authorization:</span> The API key authenticates your requests and
+        links them to your Google Cloud project and billing account.</li>
+      <li><span class="italic">Usage Tracking and Monitoring:</span> It enables Google to track your API usage, which is
+        essential for billing purposes and for you to monitor your
+        application's consumption. </li>
+      <li><span class="italic">Security:</span> API keys allow you to restrict access to specific APIs and applications,
+        preventing unauthorized use and potential
+        abuse.</li>
+      <li><span class="italic">Access to Advanced Features:</span> Many advanced features and services within the Google
+        Maps Platform require an API key.</li>
+      <li class="italic">Exceptions:
+        <ul>
+          <li><span class="italic">Basic iframe embeds:</span> If you are simply embedding a static Google Map using an
+            iframe tag, you typically do not need an API key for
+            basic display.</li>
+          <li><span class="italic">Google My Maps:</span> Creating and sharing maps through Google My Maps does not
+            require an API key.</li>
+        </ul>
+      </li>
+    </ul>
     <h3>Fees and Pricing</h3>
     <p class="tabbed-paragraph">
-      Yes, companies generally pay fees for using the Google Maps Platform APIs beyond a generous free tier
-      , with costs depending on the specific APIs used (Maps, Places, Routes) and the volume of requests, following a
-      pay-as-you-go model with potential discounts for higher usage. Google offers a monthly free credit (around $200)
-      that covers initial usage for many smaller applications, but high-traffic apps will incur charges.
-      How it Works:
-
-      Google Maps Platform: You use the Google Cloud Console to enable APIs (like Maps, Places, Routes) and manage
-      billing.
-      Free Tier: You get a monthly free credit, often enough for smaller sites to avoid charges, covering thousands of
-      map loads or location requests.
-      Pay-As-You-Go: Once you exceed the free amount, you pay per API call (or "request"), with different APIs (e.g.,
-      Dynamic Maps, Geocoding, Routes) having different rates.
-      Usage-Based Pricing: Costs scale with usage, moving to different price tiers as your monthly request volume
-      increases, making it suitable for both small and large businesses.
-
-      Key Takeaway:
+      Companies generally pay fees for using the Google Maps Platform APIs beyond a generous free tier, with costs
+      depending on the specific APIs used (Maps, Places, Routes) and the volume of requests, following a pay-as-you-go
+      model with potential discounts for higher usage. Google offers a monthly free credit (around $200) that covers
+      initial usage for many smaller applications, but high-traffic apps will incur charges.
+    </p>
+    <h4> How it Works:</h4>
+    <p class="tabbed-paragraph">You use the Google Cloud Console to enable APIs (like Maps, Places, Routes) and manage
+      billing.</p>
+    <ul>
+      <li>Free Tier: You get a monthly free credit, often enough for smaller sites to avoid charges, covering thousands
+        of map loads or location requests.</li>
+      <li>Pay-As-You-Go: Once you exceed the free amount, you pay per API call (or "request"), with different APIs
+        (e.g., Dynamic Maps, Geocoding, Routes) having different rates.</li>
+      <li>Usage-Based Pricing: Costs scale with usage, moving to different price tiers as your monthly request volume
+        increases, making it suitable for both small and large businesses.</li>
+    </ul>
+    <p class="tabbed-paragraph">
       Most companies will encounter fees if their applications generate significant traffic, but the free tier allows
-      for testing and low-volume use without cost.
-      ***
+      for testing and low-volume use without cost. Google Maps API fees are charged based on a pay-as-you-go model,
+      where usage is tracked and billed monthly through Google Cloud Platform's Cloud Billing. The core of this billing
+      system revolves around Stock Keeping Units (SKUs)
+      and billable events.</p>
+    <h4>Breakdown of how it works:</h4>
 
-      Google Maps API fees are charged based on a pay-as-you-go model, where usage is tracked and billed monthly through
-      Google Cloud Platform's Cloud Billing. The core of this billing system revolves around Stock Keeping Units (SKUs)
-      and billable events.
-      Here's a breakdown of how it works:
+    <ul>
+      <li>
+        <span class="italic">SKU-Based Pricing: </span>Google Maps Platform services are categorized into various SKUs,
+        each representing a specific API or feature (e.g., Dynamic Maps, Dynamic Street View, Geocoding, Places API
+        features like Autocomplete or Place Details). Each SKU has its own pricing structure.
+      </li>
+      <li>
+        <span class="italic">Billable Events:</span> For each SKU, there are specific "billable events" that trigger
+        charges. These events can vary significantly:
+        Map Loads: For Dynamic Maps, a charge is incurred for each successful map load.
+      </li>
+      <li>
+        <span class="italic">Panorama Loads:</span> For Dynamic Street View, each successful panorama load is a billable
+        event.
+      </li>
+      <li>
+        <span class="italic">Requests:</span> Many APIs, like Geocoding or Directions, are billed per request made to
+        their respective endpoints.
+      </li>
+      <li>
+        <span class="italic">Data Returned:</span> For some APIs, especially those with configurable data fields (like
+        Places API), the specific data
+        requested and returned can influence the cost.
+      </li>
+      <li>
+        <span class="italic">Pricing Tiers and Discounts:</span> While the base pricing is per 1,000 billable events
+        (e.g., $7 per 1,000 map loads), Google Maps Platform often offers volume-based discounts for higher usage tiers.
+      </li>
+      <li>
+        <span class="italic">Monthly Credit:</span> Historically, Google has offered a recurring monthly credit (e.g.,
+        $200) that can be applied to qualifying Google Maps Platform SKUs, effectively providing a free tier of usage
+        for many applications.
+      </li>
+      <li><span class="italic">Billing and Management:</span> Billing is managed through the Google Cloud Console, where
+        you can monitor your usage, set up budgets and alerts, and enable or disable billing for your projects. An API
+        key is required for authentication and billing purposes.
+      </li>
+    </ul>
 
-      SKU-Based Pricing:
-      Google Maps Platform services are categorized into various SKUs, each representing a specific API or feature
-      (e.g., Dynamic Maps, Dynamic Street View, Geocoding, Places API features like Autocomplete or Place Details). Each
-      SKU has its own pricing structure.
-      Billable Events:
-      For each SKU, there are specific "billable events" that trigger charges. These events can vary significantly:
-      Map Loads: For Dynamic Maps, a charge is incurred for each successful map load.
-      Panorama Loads: For Dynamic Street View, each successful panorama load is a billable event.
-      Requests: Many APIs, like Geocoding or Directions, are billed per request made to their respective endpoints.
-      Data Returned: For some APIs, especially those with configurable data fields (like Places API), the specific data
-      requested and returned can influence the cost.
-      Pricing Tiers and Discounts:
-      While the base pricing is per 1,000 billable events (e.g., $7 per 1,000 map loads), Google Maps Platform often
-      offers volume-based discounts for higher usage tiers.
-      Monthly Credit:
-      Historically, Google has offered a recurring monthly credit (e.g., $200) that can be applied to qualifying Google
-      Maps Platform SKUs, effectively providing a free tier of usage for many applications.
-      Billing and Management:
-      Billing is managed through the Google Cloud Console, where you can monitor your usage, set up budgets and alerts,
-      and enable or disable billing for your projects. An API key is required for authentication and billing purposes.
-
-      In essence, you pay for what you use, with the cost determined by the specific Google Maps API features you
-      implement and the volume of billable events generated by your application.
+    <p class="tabbed-paragraph">In essence, you pay for what you use, with the cost determined by the specific Google
+      Maps API features you
+      implement and the volume of billable events generated by your application.</p>
 
     </p>
     <h3>Documentation</h3>
@@ -217,10 +233,9 @@
       <div id="map"></div>
     </div>
   </section>
-    <script src="./script.js" defer></script>
+  <script src="./script.js" defer></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsxOsWWart-vlkgwLZCirQqjQEr9hBhjE&callback=initMap"
     defer></script>
-
 </body>
 
 </html>

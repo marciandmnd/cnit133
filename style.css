@@ -109,6 +109,14 @@ section h2 {
     margin-bottom: 0.4em;
 }
 
+.mt-1 {
+    margin-top: 0.2em;
+}
+
+.mt-2 {
+    margin-top: 0.4em;
+}
+
 .bold {
     font-weight: bold;
 }

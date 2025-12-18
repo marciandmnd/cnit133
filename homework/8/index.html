@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="description" content="CCSF CNIT 133 Homework 7">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CNIT 133 - Homework 7</title>
+  <title>CNIT 133 - Homework 8</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="./style.css">
   <link rel="icon" href="../../favicon.png" type="image/gif">
@@ -45,35 +45,80 @@
     function myFunction(xml) {
       const xmlDoc = xml.responseXML;
       const x = xmlDoc.getElementsByTagName("CD");
-      let table = "<tr><th>Artist</th><th>Title</th></tr>";
+      let table = "<tr><th>Artist</th><th>Title</th><th>Country</th><th>Company</th><th>Price</th><th>Year</th></tr>";
       for (let i = 0; i < x.length; i++) {
         table += "<tr><td>" +
           x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+          x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue +
           "</td><td>" +
-          x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+          x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
           "</td></tr>";
       }
       document.getElementById("demo").innerHTML = table;
     }
   </script>
   <section class="section mb-2">
-    <h2>Explanation of Ajax</h2>
-    <p class="tabbed-paragraph">Ajax (Asynchronous JavaScript and XML) is a technique for creating web pages. It allows
-      web pages to be updated
-      asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is
-      possible to update parts of a page, without reloading the whole page. Ajax is widely used in applications to
-      improve user experience by making pages more responsive and interactive.</p>
+    <h2>Explanation of AJAX</h2>
+    <p class="tabbed-paragraph">
+      AJAX (Asynchronous JavaScript and XML) is a technique for creating web pages. It allows web pages to be updated
+      asynchronously by exchanging data with the server behind the scenes. This means that it is possible to update
+      parts of a page, without reloading the whole page. AJAX is widely used in applications to improve user experience
+      by making pages more responsive and interactive.
+    </p>
 
-    <p class="tabbed-paragraph">In this html file, when the 'Get CD collection' button is clicked, an AJAX request is
-      made to fetch an XML file
-      containing a CD catalog, and the data is then displayed in a table without reloading the page. XMLHttpRequest
-      (XHR) is a JavaScript object fundamental to implementing Asynchronous JavaScript and XML (AJAX) functionality in
-      web applications. It allows web pages to send and receive data from a web server asynchronously. In JavaScript,
-      "asynchronously" refers to a programming paradigm where certain tasks can be initiated and allowed to run in the
-      background, without blocking the execution of the main program thread. This contrasts with synchronous execution,
-      where each task must complete before the next one can begin. In the script of this page, an XMLHttpRequest object
-      is created, configured to perform a GET request to the XML file, and sent. When the response is received, the XML
-      data is parsed and used to dynamically generate the HTML table displaying the CD catalog.</p>
+    <p class="tabbed-paragraph">
+      In this html file, a click listener is attached to the 'Get CD Collection' button, so when the button is clicked, a JavaScript function named loadDoc() is called:</p>
+      <p><code>&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot; onclick=&quot;loadDoc()&quot;&gt;Get CD collection&lt;/button&gt;</code></p>
+      <p>In loadDoc() an AJAX request is made to fetch an XML file, cd_catalog.xml,
+      containing a CD catalog; the data is displayed in a table without reloading the page:</p>
+      <p><code>&lt;script&gt;<br>
+    &nbsp;&nbsp;function loadDoc() {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;const xhttp = new XMLHttpRequest();<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;xhttp.onload = function () {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myFunction(this);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;xhttp.open(&quot;GET&quot;, &quot;cd_catalog.xml&quot;);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;xhttp.send();<br>
+    &nbsp;&nbsp;}<br><br></code></p>
+   
+      <p class="tabbed-paragraph">XMLHttpRequest (XHR) is a
+      JavaScript object fundamental to implementing AJAX. It allows web pages to send and receive data from a web server
+      asynchronously. In JavaScript, "asynchronously" refers to a programming paradigm where tasks can be initiated and
+      allowed to run in the background, without blocking the execution of the main program thread. This contrasts with
+      synchronous execution, where each task must complete before the next one can begin. In the script of this page, an
+      XHR object is created, configured to perform a GET request to the XML file, and sent. When the response is
+      received, the callback function, myFunction(), configured in the XHR object, is executed. In myFunction(), the XML data is parsed and used to dynamically generate the HTML table displaying the CD catalog:
+    </p>
+    <p><code>
+      &nbsp;&nbsp;function myFunction(xml) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;const xmlDoc = xml.responseXML;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;const x = xmlDoc.getElementsByTagName(&quot;CD&quot;);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;let table = &quot;&lt;tr&gt;&lt;th&gt;Artist&lt;/th&gt;&lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Country&lt;/th&gt;&lt;th&gt;Company&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;th&gt;Year&lt;/th&gt;&lt;/tr&gt;&quot;;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i &lt; x.length; i++) {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;table += &quot;&lt;tr&gt;&lt;td&gt;&quot; +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i].getElementsByTagName(&quot;ARTIST&quot;)[0].childNodes[0].nodeValue +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;/td&gt;&lt;td&gt;&quot; +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i].getElementsByTagName(&quot;TITLE&quot;)[0].childNodes[0].nodeValue +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;/td&gt;&lt;td&gt;&quot; +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i].getElementsByTagName(&quot;COUNTRY&quot;)[0].childNodes[0].nodeValue +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;/td&gt;&lt;td&gt;&quot; +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i].getElementsByTagName(&quot;COMPANY&quot;)[0].childNodes[0].nodeValue +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;/td&gt;&lt;td&gt;&quot; +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i].getElementsByTagName(&quot;PRICE&quot;)[0].childNodes[0].nodeValue +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;/td&gt;&lt;td&gt;&quot; +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[i].getElementsByTagName(&quot;YEAR&quot;)[0].childNodes[0].nodeValue +<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;/td&gt;&lt;/tr&gt;&quot;;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById(&quot;demo&quot;).innerHTML = table;<br>
+    &nbsp;&nbsp;}<br>
+  &lt;/script&gt;</code></p></code></p>
   </section>
 
   <section class="section mb-2">
@@ -82,70 +127,98 @@
     <h3>Report for Developers: Why Use the Google Maps API?</h3>
     <ul>
       <li><span class="italic">Comprehensive Location Data and Functionality:</span>
-        The Google Maps Platform offers a vast array of APIs covering various location-based needs, including:
+        The Google Maps Platform offers many APIs covering various location-based needs, including:
         <ul>
-          <li><span class="italic">Maps:</span> Customizable maps, Street View imagery, 2D and 3D views, markers, and
-            custom data for web and mobile
-            applications.</li>
-          <li><span class="italic">Routes:</span> Accurate directions, real-time traffic information, route
-            optimization, and distance calculations
-            for various modes of transport.</li>
-          <li><span class="italic">Places:</span> Rich metadata for millions of places, enabling discovery, search by
-            address or phone number, and
-            access to details like reviews and photos.</li>
-          <li><span class="italic">Geocoding:</span> Converting addresses to geographic coordinates and vice-versa.</li>
+          <li>
+            <span class="italic">Maps:</span> Customizable maps, Street View imagery, 2D and 3D views, markers, and
+            custom data for web and mobileapplications.
+          </li>
+          <li>
+            <span class="italic">Routes:</span> Accurate directions, real-time traffic information, route optimization,
+            and distance calculations for various modes of transport.
+          </li>
+          <li>
+            <span class="italic">Places:</span> Rich metadata for millions of places, enabling discovery, search
+            byaddress or phone number, and access to details like reviews and photos.
+          </li>
+          <li>
+            <span class="italic">Geocoding:</span> Converting addresses to geographic coordinates and vice-versa.
+          </li>
         </ul>
       </li>
-      <li><span class="italic">Reliability and Scale:</span>
+      <li>
+        <span class="italic">Reliability and Scale:</span>
         Google Maps is a widely used and trusted platform, providing a robust and scalable infrastructure for
-        location-based services. This ensures high availability and performance for applications that rely on these
-        APIs.</li>
-      <li><span class="italic">Integration with Google Ecosystem:</span>
+        location-based services. This ensures high availability and performance.
+      </li>
+      <li>
+        <span class="italic">Integration with Google Ecosystem:</span>
         The APIs seamlessly integrate with other Google products and services, offering a cohesive experience and
-        potentially enhancing functionalities within applications.</li>
-      <li><span class="italic">User Experience and Familiarity:</span>
+        potentially enhancing functionalities within applications.
+      </li>
+      <li>
+        <span class="italic">User Experience and Familiarity:</span>
         Users are generally familiar with the Google Maps interface and features, leading to a more intuitive and
-        user-friendly experience when encountering applications built with the Google Maps Platform.</li>
-      <li><span class="italic">Active Development and Support:</span>
+        user-friendly experience when encountering applications built with the Google Maps Platform.
+      </li>
+      <li>
+        <span class="italic">Active Development and Support:</span>
         Google actively maintains and updates the Maps Platform, providing ongoing improvements, new features, and
-        comprehensive documentation and support for developers.</li>
-      <li><span class="italic">Search Engine Optimization (SEO) Benefits:</span>
+        comprehensive documentation and support for developers.
+      </li>
+      <li>
+        <span class="italic">Search Engine Optimization (SEO) Benefits:</span>
         Incorporating Google Maps can improve local SEO for businesses, making it easier for customers to find physical
-        locations and enhancing visibility in search results, especially with Google's mobile-first indexing.</li>
+        locations and enhancing visibility in search results, especially with Google's mobile-first indexing.
+      </li>
     </ul>
     <h3>Response Formats</h3>
     <p class="tabbed-paragraph">
       Google Maps Platform APIs generally return responses in either JSON (JavaScript Object Notation) or XML
       (Extensible Markup Language) format. The specific format can usually be specified in your API request, often
-      through a parameter in the URL. For
-      example, in many APIs like the Geocoding API, you might specify output=json or output=xml to indicate your
-      preferred response format. JSON is often the recommended and more commonly used format for web services due to its
+      through a parameter in the URL. For example, in many APIs like the Geocoding API, you might specify output=json or
+      output=xml to indicate your preferred response format. JSON is often the recommended and more commonly used format
+      for web services due to its
       lightweight nature and ease of parsing in modern web applications.</p>
     <h3>API Key Requirement</h3>
     <p class="tabbed-paragraph">
       An API key is generally required to access and use the Google Maps Platform APIs, including the Maps JavaScript
       API. While older versions (like V3 upon its initial release) did not strictly require an API key for basic
       functionality, current best practices and the official Google Maps Platform documentation strongly recommend and
-      often mandate the use of API keys.<br><br>
-      <span class="bold italic">Reasons for requiring an API key:</span>
+      often mandate the use of API keys.
+    </p>
+      <h4 class="bold italic">Reasons for requiring an API key:</h4>
+    </p>
     <ul>
-      <li><span class="italic">Authentication and Authorization:</span> The API key authenticates your requests and
-        links them to your Google Cloud project and billing account.</li>
-      <li><span class="italic">Usage Tracking and Monitoring:</span> It enables Google to track your API usage, which is
+      <li>
+        <span class="italic">Authentication and Authorization:</span> The API key authenticates your requests and
+        links them to your Google Cloud project and billing account.
+      </li>
+      <li>
+        <span class="italic">Usage Tracking and Monitoring:</span> It enables Google to track your API usage, which is
         essential for billing purposes and for you to monitor your
-        application's consumption. </li>
-      <li><span class="italic">Security:</span> API keys allow you to restrict access to specific APIs and applications,
+        application's consumption. 
+      </li>
+      <li>
+        <span class="italic">Security:</span> API keys allow you to restrict access to specific APIs and applications,
         preventing unauthorized use and potential
-        abuse.</li>
-      <li><span class="italic">Access to Advanced Features:</span> Many advanced features and services within the Google
-        Maps Platform require an API key.</li>
+        abuse.
+      </li>
+      <li>
+        <span class="italic">Access to Advanced Features:</span> Many advanced features and services within the Google
+        Maps Platform require an API key.
+      </li>
       <li class="italic">Exceptions:
         <ul>
-          <li><span class="italic">Basic iframe embeds:</span> If you are simply embedding a static Google Map using an
+          <li>
+            <span class="italic">Basic iframe embeds:</span> If you are simply embedding a static Google Map using an
             iframe tag, you typically do not need an API key for
-            basic display.</li>
-          <li><span class="italic">Google My Maps:</span> Creating and sharing maps through Google My Maps does not
-            require an API key.</li>
+            basic display.
+          </li>
+          <li>
+            <span class="italic">Google My Maps:</span> Creating and sharing maps through Google My Maps does not
+            require an API key.
+          </li>
         </ul>
       </li>
     </ul>
@@ -156,9 +229,10 @@
       model with potential discounts for higher usage. Google offers a monthly free credit (around $200) that covers
       initial usage for many smaller applications, but high-traffic apps will incur charges.
     </p>
-    <h4> How it Works:</h4>
-    <p class="tabbed-paragraph">You use the Google Cloud Console to enable APIs (like Maps, Places, Routes) and manage
-      billing.</p>
+    <h4 class="bold italic">How it Works:</h4>
+    <p class="tabbed-paragraph">The <a href="https://cloud.google.com/" target="_blank">Google Cloud Console</a> is used to enable APIs (like Maps, Places, Routes) and manage
+      billing.
+    </p>
     <ul>
       <li>Free Tier: You get a monthly free credit, often enough for smaller sites to avoid charges, covering thousands
         of map loads or location requests.</li>
@@ -173,7 +247,7 @@
       where usage is tracked and billed monthly through Google Cloud Platform's Cloud Billing. The core of this billing
       system revolves around Stock Keeping Units (SKUs)
       and billable events.</p>
-    <h4>Breakdown of how it works:</h4>
+    <h4 class="bold italic">Breakdown of how it works:</h4>
 
     <ul>
       <li>
@@ -218,7 +292,6 @@
       Maps API features you
       implement and the volume of billable events generated by your application.</p>
 
-    </p>
     <h3>Documentation</h3>
     <p class="tabbed-paragraph">The Google Maps Platform documentation offers APIs and SDKs designed for web, Android,
       and iOS developers, enabling the integration of location-based features into applications
@@ -228,7 +301,7 @@
   </section>
   <section class="section" style="display: inherit;">
     <h2>Extra Credit</h2>
-    <h3>Holy Cities of Islam: Jerusalem, Medina, Makkah</h3>
+    <h3>Holy Cities of Islam: Jerusalem, Madinah, Makkah</h3>
     <div id="map-container" class="width-100 mb-2">
       <div id="map"></div>
     </div>
